@@ -16,6 +16,8 @@
 		AB21BFCB2C664D5F0033D08A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB21BFCA2C664D5F0033D08A /* SnapKit */; };
 		AB21BFCF2C664F150033D08A /* RegisterView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFCE2C664F150033D08A /* RegisterView.storyboard */; };
 		AB21BFD12C6653250033D08A /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFD02C6653250033D08A /* HomeView.storyboard */; };
+		AB21BFD32C6655D80033D08A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFD22C6655D80033D08A /* LoginViewController.swift */; };
+		AB21BFD52C6655F30033D08A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFD42C6655F30033D08A /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		AB21BFC32C6607A20033D08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB21BFCE2C664F150033D08A /* RegisterView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterView.storyboard; sourceTree = "<group>"; };
 		AB21BFD02C6653250033D08A /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
+		AB21BFD22C6655D80033D08A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AB21BFD42C6655F30033D08A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 		AB21BFCC2C664EE10033D08A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AB21BFD22C6655D80033D08A /* LoginViewController.swift */,
+				AB21BFD42C6655F30033D08A /* RegisterViewController.swift */,
 				AB21BFB92C66079F0033D08A /* HomeViewController.swift */,
 			);
 			path = ViewController;
@@ -170,6 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB21BFD32C6655D80033D08A /* LoginViewController.swift in Sources */,
+				AB21BFD52C6655F30033D08A /* RegisterViewController.swift in Sources */,
 				AB21BFBA2C66079F0033D08A /* HomeViewController.swift in Sources */,
 				AB21BFB62C66079F0033D08A /* AppDelegate.swift in Sources */,
 				AB21BFB82C66079F0033D08A /* SceneDelegate.swift in Sources */,
