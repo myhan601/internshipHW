@@ -11,10 +11,7 @@ class RegisterViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
-    @IBOutlet weak var pwCheckTextField: UITextField!
-    @IBOutlet weak var wrongPWText: UILabel!
     
-    @IBOutlet weak var registerButton: UIButton!
     @IBAction func registerButtonClicked(_ sender: Any) {
         print("가입완료")
         // LoginView로 돌아가기
@@ -26,6 +23,4 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-
 }
