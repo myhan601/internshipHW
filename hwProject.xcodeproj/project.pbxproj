@@ -9,21 +9,24 @@
 /* Begin PBXBuildFile section */
 		AB21BFB62C66079F0033D08A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFB52C66079F0033D08A /* AppDelegate.swift */; };
 		AB21BFB82C66079F0033D08A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFB72C66079F0033D08A /* SceneDelegate.swift */; };
-		AB21BFBA2C66079F0033D08A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFB92C66079F0033D08A /* ViewController.swift */; };
+		AB21BFBA2C66079F0033D08A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFB92C66079F0033D08A /* HomeViewController.swift */; };
 		AB21BFBD2C66079F0033D08A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFBC2C66079F0033D08A /* Base */; };
 		AB21BFBF2C6607A20033D08A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFBE2C6607A20033D08A /* Assets.xcassets */; };
 		AB21BFC22C6607A20033D08A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFC12C6607A20033D08A /* Base */; };
+		AB21BFCB2C664D5F0033D08A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB21BFCA2C664D5F0033D08A /* SnapKit */; };
+		AB21BFCF2C664F150033D08A /* RegisterView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFCE2C664F150033D08A /* RegisterView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB21BFB22C66079F0033D08A /* hwProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hwProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB21BFB52C66079F0033D08A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB21BFB72C66079F0033D08A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB21BFB92C66079F0033D08A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AB21BFBC2C66079F0033D08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB21BFB92C66079F0033D08A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AB21BFBC2C66079F0033D08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeView.storyboard; sourceTree = "<group>"; };
 		AB21BFBE2C6607A20033D08A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB21BFC12C6607A20033D08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB21BFC32C6607A20033D08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB21BFCE2C664F150033D08A /* RegisterView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB21BFCB2C664D5F0033D08A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +62,30 @@
 			children = (
 				AB21BFB52C66079F0033D08A /* AppDelegate.swift */,
 				AB21BFB72C66079F0033D08A /* SceneDelegate.swift */,
-				AB21BFB92C66079F0033D08A /* ViewController.swift */,
-				AB21BFBB2C66079F0033D08A /* Main.storyboard */,
+				AB21BFCC2C664EE10033D08A /* ViewController */,
+				AB21BFCD2C664EEA0033D08A /* View */,
 				AB21BFBE2C6607A20033D08A /* Assets.xcassets */,
 				AB21BFC02C6607A20033D08A /* LaunchScreen.storyboard */,
 				AB21BFC32C6607A20033D08A /* Info.plist */,
 			);
 			path = hwProject;
+			sourceTree = "<group>";
+		};
+		AB21BFCC2C664EE10033D08A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AB21BFB92C66079F0033D08A /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AB21BFCD2C664EEA0033D08A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB21BFBB2C66079F0033D08A /* HomeView.storyboard */,
+				AB21BFCE2C664F150033D08A /* RegisterView.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +104,9 @@
 			dependencies = (
 			);
 			name = hwProject;
+			packageProductDependencies = (
+				AB21BFCA2C664D5F0033D08A /* SnapKit */,
+			);
 			productName = hwProject;
 			productReference = AB21BFB22C66079F0033D08A /* hwProject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +135,9 @@
 				Base,
 			);
 			mainGroup = AB21BFA92C66079F0033D08A;
+			packageReferences = (
+				AB21BFC92C664D5F0033D08A /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = AB21BFB32C66079F0033D08A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +154,7 @@
 			files = (
 				AB21BFBF2C6607A20033D08A /* Assets.xcassets in Resources */,
 				AB21BFC22C6607A20033D08A /* Base in Resources */,
+				AB21BFCF2C664F150033D08A /* RegisterView.storyboard in Resources */,
 				AB21BFBD2C66079F0033D08A /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB21BFBA2C66079F0033D08A /* ViewController.swift in Sources */,
+				AB21BFBA2C66079F0033D08A /* HomeViewController.swift in Sources */,
 				AB21BFB62C66079F0033D08A /* AppDelegate.swift in Sources */,
 				AB21BFB82C66079F0033D08A /* SceneDelegate.swift in Sources */,
 			);
@@ -147,12 +175,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AB21BFBB2C66079F0033D08A /* Main.storyboard */ = {
+		AB21BFBB2C66079F0033D08A /* HomeView.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AB21BFBC2C66079F0033D08A /* Base */,
 			);
-			name = Main.storyboard;
+			name = HomeView.storyboard;
 			sourceTree = "<group>";
 		};
 		AB21BFC02C6607A20033D08A /* LaunchScreen.storyboard */ = {
@@ -361,6 +389,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB21BFC92C664D5F0033D08A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB21BFCA2C664D5F0033D08A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB21BFC92C664D5F0033D08A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB21BFAA2C66079F0033D08A /* Project object */;
 }
