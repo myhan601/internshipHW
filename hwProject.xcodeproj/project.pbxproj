@@ -15,6 +15,7 @@
 		AB21BFC22C6607A20033D08A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFC12C6607A20033D08A /* Base */; };
 		AB21BFCB2C664D5F0033D08A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB21BFCA2C664D5F0033D08A /* SnapKit */; };
 		AB21BFCF2C664F150033D08A /* RegisterView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFCE2C664F150033D08A /* RegisterView.storyboard */; };
+		AB21BFD12C6653250033D08A /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFD02C6653250033D08A /* HomeView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,11 +23,12 @@
 		AB21BFB52C66079F0033D08A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB21BFB72C66079F0033D08A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AB21BFB92C66079F0033D08A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		AB21BFBC2C66079F0033D08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeView.storyboard; sourceTree = "<group>"; };
+		AB21BFBC2C66079F0033D08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginView.storyboard; sourceTree = "<group>"; };
 		AB21BFBE2C6607A20033D08A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB21BFC12C6607A20033D08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB21BFC32C6607A20033D08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB21BFCE2C664F150033D08A /* RegisterView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterView.storyboard; sourceTree = "<group>"; };
+		AB21BFD02C6653250033D08A /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +84,9 @@
 		AB21BFCD2C664EEA0033D08A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AB21BFBB2C66079F0033D08A /* HomeView.storyboard */,
+				AB21BFBB2C66079F0033D08A /* LoginView.storyboard */,
 				AB21BFCE2C664F150033D08A /* RegisterView.storyboard */,
+				AB21BFD02C6653250033D08A /* HomeView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB21BFD12C6653250033D08A /* HomeView.storyboard in Resources */,
 				AB21BFBF2C6607A20033D08A /* Assets.xcassets in Resources */,
 				AB21BFC22C6607A20033D08A /* Base in Resources */,
 				AB21BFCF2C664F150033D08A /* RegisterView.storyboard in Resources */,
@@ -175,12 +179,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AB21BFBB2C66079F0033D08A /* HomeView.storyboard */ = {
+		AB21BFBB2C66079F0033D08A /* LoginView.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AB21BFBC2C66079F0033D08A /* Base */,
 			);
-			name = HomeView.storyboard;
+			name = LoginView.storyboard;
 			sourceTree = "<group>";
 		};
 		AB21BFC02C6607A20033D08A /* LaunchScreen.storyboard */ = {
