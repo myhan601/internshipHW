@@ -20,6 +20,7 @@
 		AB21BFE92C67B7810033D08A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AB21BFE82C67B7810033D08A /* RealmSwift */; };
 		AB21BFEB2C67BBAD0033D08A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFEA2C67BBAD0033D08A /* User.swift */; };
 		AB21BFED2C67BC870033D08A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFEC2C67BC870033D08A /* UserManager.swift */; };
+		AB6FAEAB2C67D37B0032FB42 /* RegisterInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6FAEAA2C67D37B0032FB42 /* RegisterInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		AB21BFD62C66F23C0033D08A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AB21BFEA2C67BBAD0033D08A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB21BFEC2C67BC870033D08A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		AB6FAEAA2C67D37B0032FB42 /* RegisterInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		AB21BFCD2C664EEA0033D08A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB6FAEAA2C67D37B0032FB42 /* RegisterInputView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			files = (
 				AB21BFD32C6655D80033D08A /* LoginViewController.swift in Sources */,
 				AB21BFD52C6655F30033D08A /* RegisterViewController.swift in Sources */,
+				AB6FAEAB2C67D37B0032FB42 /* RegisterInputView.swift in Sources */,
 				AB21BFBA2C66079F0033D08A /* HomeViewController.swift in Sources */,
 				AB21BFB62C66079F0033D08A /* AppDelegate.swift in Sources */,
 				AB21BFED2C67BC870033D08A /* UserManager.swift in Sources */,
