@@ -11,6 +11,17 @@ import Then
 
 class HomeViewController: UIViewController {
     
+    let userManager: UserManager
+    
+    init(userManager: UserManager = UserManager()) {
+        self.userManager = userManager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     let welcomeLabel = UILabel().then {
         $0.text = "환영합니다"
         $0.font = UIFont.systemFont(ofSize: 24)
@@ -35,9 +46,20 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupConstraints()
-        
-        logoutButton.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
-        logoutButton.addTarget(self, action: #selector(resignButtonPressed), for: .touchUpInside)
+        updateWelcomeLabel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateWelcomeLabel()
+    }
+    
+    private func updateWelcomeLabel() {
+        if let loggedInUser = userManager.getLoggedInUser() {
+            welcomeLabel.text = "환영합니다, \(loggedInUser.email)!"
+        } else {
+            welcomeLabel.text = "로그인된 사용자가 없습니다"
+        }
     }
     
     private func setupUI() {
@@ -68,16 +90,44 @@ class HomeViewController: UIViewController {
     }
     
     @objc func logoutButtonPressed(_ sender: Any) {
-        // 로그아웃하고 LoginView로 돌아가기
+        userManager.logoutUser()  // 로그아웃 처리
         if let navigationController = navigationController {
             navigationController.popToRootViewController(animated: true)
         }
     }
     
     @objc func resignButtonPressed(_ sender: Any) {
-        // 회원정보 삭제하고 LoginView로 돌아가기
-        if let navigationController = navigationController {
-            navigationController.popToRootViewController(animated: true)
+        guard userManager.loggedInUser != nil else {
+            showAlert(message: "로그인된 사용자가 없습니다.")
+            return
         }
+        
+        let alert = UIAlertController(title: "회원 탈퇴", message: "정말로 탈퇴하시겠습니까?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "확인", style: .destructive, handler: { [weak self] _ in
+            guard let self = self else { return }
+            
+            if self.userManager.deleteLoggedInUser() {
+                DispatchQueue.main.async {
+                    if let loginVC = self.navigationController?.viewControllers.first(where: { $0 is LoginViewController }) {
+                        self.navigationController?.popToViewController(loginVC, animated: true)
+                    } else {
+                        let loginVC = LoginViewController()
+                        self.navigationController?.setViewControllers([loginVC], animated: true)
+                    }
+                }
+            } else {
+                self.showAlert(message: "사용자 삭제 중 오류가 발생했습니다.")
+            }
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
