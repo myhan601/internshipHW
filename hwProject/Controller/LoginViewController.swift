@@ -48,6 +48,11 @@ class LoginViewController: UIViewController {
         setupConstraints()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        clearTextFields()
+    }
+    
     private func setupUI() {
         view.backgroundColor = .white
 
@@ -105,6 +110,11 @@ class LoginViewController: UIViewController {
         let registerViewController = RegisterViewController()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.pushViewController(registerViewController, animated: true)
+    }
+    
+    private func clearTextFields() {
+        emailTextField.text = ""
+        passwordTextField.text = ""
     }
 
     private func showAlert(message: String) {
