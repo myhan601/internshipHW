@@ -6,28 +6,94 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var emailInputTextField: UITextField!
-    @IBOutlet weak var pwInputTextField: UITextField!
-    
-    
-    @IBAction func loginButtonPressed(_ sender: Any) {
-        // 로그인 성공 시 HomeView로
-        // 이메일이 DB에 존재x -> 존재하지 않습니다 alert
-        // 이메일이 DB에 존재o , 비밀번호가 틀리면? -> 비밀번호가 틀립니다 alert
+    // UI Elements
+    let emailTextField = UITextField().then {
+        $0.placeholder = "email@example.com"
+        $0.borderStyle = .roundedRect
+        $0.font = UIFont.systemFont(ofSize: 16)
     }
-    
-    @IBAction func registerButtonTapped(_ sender: Any) {
-        // RegisterView로 이동
+
+    let passwordTextField = UITextField().then {
+        $0.placeholder = "Password"
+        $0.borderStyle = .roundedRect
+        $0.isSecureTextEntry = true
+        $0.font = UIFont.systemFont(ofSize: 16)
     }
-    
+
+    let loginButton = UIButton().then {
+        $0.setTitle("Login", for: .normal)
+        $0.backgroundColor = UIColor.lightGray
+        $0.setTitleColor(.black, for: .normal)
+        $0.layer.cornerRadius = 5
+        $0.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+    }
+
+    let registerButton = UIButton().then {
+        $0.setTitle("Register", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        $0.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
+        setupConstraints()
     }
-    
 
+    private func setupUI() {
+        view.backgroundColor = .white
+
+        view.addSubview(emailTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(loginButton)
+        view.addSubview(registerButton)
+    }
+
+    private func setupConstraints() {
+        emailTextField.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(100)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(40)
+        }
+
+        passwordTextField.snp.makeConstraints {
+            $0.top.equalTo(emailTextField.snp.bottom).offset(20)
+            $0.leading.trailing.equalTo(emailTextField)
+            $0.height.equalTo(40)
+        }
+
+        loginButton.snp.makeConstraints {
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(200)
+            $0.height.equalTo(50)
+        }
+
+        registerButton.snp.makeConstraints {
+            $0.top.equalTo(loginButton.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
+        }
+    }
+
+    @objc func loginButtonPressed(_ sender: Any) {
+        // Handle login action
+        let homeViewController = HomeViewController()
+        homeViewController.navigationItem.hidesBackButton = true
+        
+        self.navigationController?.pushViewController(homeViewController, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
+    @objc func registerButtonTapped(_ sender: Any) {
+        // Navigate to RegisterViewController
+        let registerViewController = RegisterViewController()
+        self.navigationController?.pushViewController(registerViewController, animated: true)
+    }
 }

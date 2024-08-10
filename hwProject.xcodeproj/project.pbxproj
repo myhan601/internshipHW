@@ -16,10 +16,7 @@
 		AB21BFD32C6655D80033D08A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFD22C6655D80033D08A /* LoginViewController.swift */; };
 		AB21BFD52C6655F30033D08A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFD42C6655F30033D08A /* RegisterViewController.swift */; };
 		AB21BFD72C66F23C0033D08A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFD62C66F23C0033D08A /* Main.storyboard */; };
-		AB21BFD92C66F2B10033D08A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFD82C66F2B10033D08A /* RegisterView.swift */; };
 		AB21BFDC2C66F2EA0033D08A /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB21BFDB2C66F2EA0033D08A /* Then */; };
-		AB21BFDE2C670BF90033D08A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFDD2C670BF90033D08A /* LoginView.swift */; };
-		AB21BFE12C670D0C0033D08A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFE02C670D0C0033D08A /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +30,6 @@
 		AB21BFD22C6655D80033D08A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB21BFD42C6655F30033D08A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AB21BFD62C66F23C0033D08A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		AB21BFD82C66F2B10033D08A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		AB21BFDD2C670BF90033D08A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		AB21BFE02C670D0C0033D08A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +90,6 @@
 		AB21BFCD2C664EEA0033D08A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AB21BFD82C66F2B10033D08A /* RegisterView.swift */,
-				AB21BFDD2C670BF90033D08A /* LoginView.swift */,
-				AB21BFE02C670D0C0033D08A /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,11 +181,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB21BFD32C6655D80033D08A /* LoginViewController.swift in Sources */,
-				AB21BFDE2C670BF90033D08A /* LoginView.swift in Sources */,
 				AB21BFD52C6655F30033D08A /* RegisterViewController.swift in Sources */,
 				AB21BFBA2C66079F0033D08A /* HomeViewController.swift in Sources */,
-				AB21BFD92C66F2B10033D08A /* RegisterView.swift in Sources */,
-				AB21BFE12C670D0C0033D08A /* HomeView.swift in Sources */,
 				AB21BFB62C66079F0033D08A /* AppDelegate.swift in Sources */,
 				AB21BFB82C66079F0033D08A /* SceneDelegate.swift in Sources */,
 			);

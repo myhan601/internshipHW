@@ -11,15 +11,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        // 코드로 작성한 RegisterViewController 사용
-        let registerView = RegisterView()
-        
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = registerView
+        
+        let loginViewController = LoginViewController()
+        
+        let navigationController = UINavigationController(rootViewController: loginViewController)
+        
+        window.rootViewController = navigationController
+        
         self.window = window
         window.makeKeyAndVisible()
     }
