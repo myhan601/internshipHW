@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import RealmSwift
 
 class LoginViewController: UIViewController {
 
@@ -38,6 +39,8 @@ class LoginViewController: UIViewController {
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         $0.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
+
+    let userManager = UserManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,16 +85,31 @@ class LoginViewController: UIViewController {
     }
 
     @objc func loginButtonPressed(_ sender: Any) {
-        let homeViewController = HomeViewController()
-        homeViewController.navigationItem.hidesBackButton = true
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            showAlert(message: "이메일과 비밀번호를 입력하세요.")
+            return
+        }
         
-        self.navigationController?.pushViewController(homeViewController, animated: true)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        if userManager.verifyUser(email: email, password: password) {
+            let homeViewController = HomeViewController()
+            homeViewController.navigationItem.hidesBackButton = true
+            
+            self.navigationController?.pushViewController(homeViewController, animated: true)
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        } else {
+            showAlert(message: "이메일 또는 비밀번호가 일치하지 않습니다.")
+        }
     }
 
     @objc func registerButtonTapped(_ sender: Any) {
         let registerViewController = RegisterViewController()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.pushViewController(registerViewController, animated: true)
+    }
+
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

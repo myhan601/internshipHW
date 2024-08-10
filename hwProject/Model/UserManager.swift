@@ -29,6 +29,10 @@ class UserManager {
         return realm.objects(User.self).filter("email == %@", email).count > 0
     }
     
+    func verifyUser(email: String, password: String) -> Bool {
+        return realm.objects(User.self).filter("email == %@ AND password == %@", email, password).count > 0
+    }
+    
     func getAllUsers() -> Results<User> {
         return realm.objects(User.self)
     }
