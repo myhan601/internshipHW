@@ -8,10 +8,10 @@
 import UIKit
 import SnapKit
 import Then
+import RealmSwift
 
 class RegisterViewController: UIViewController {
     
-    // UI 요소들
     let titleLabel = UILabel().then {
         $0.text = "회원가입"
         $0.font = UIFont.boldSystemFont(ofSize: 24)
@@ -49,6 +49,16 @@ class RegisterViewController: UIViewController {
         $0.isUserInteractionEnabled = true
     }
     
+    let showUsersButton = UIButton().then {
+        $0.setTitle("모든 사용자 보기", for: .normal)
+        $0.backgroundColor = UIColor.lightGray
+        $0.setTitleColor(.black, for: .normal)
+        $0.layer.cornerRadius = 5
+        $0.isUserInteractionEnabled = true
+    }
+    
+    let userManager = UserManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -65,6 +75,7 @@ class RegisterViewController: UIViewController {
         view.addSubview(passwordLabel)
         view.addSubview(passwordTextField)
         view.addSubview(registerButton)
+        view.addSubview(showUsersButton)
     }
     
     private func setupConstraints() {
@@ -112,30 +123,31 @@ class RegisterViewController: UIViewController {
     @objc private func registerButtonTapped() {
         print("Register button tapped")
         
-        // 이메일 유효성 검사
         guard let email = emailTextField.text, isValidEmail(email) else {
             showAlert(message: "유효한 이메일을 입력하세요.")
             return
         }
         
-        // 비밀번호 유효성 검사
         guard let password = passwordTextField.text, isValidPassword(password) else {
             showAlert(message: "비밀번호는 6자리 이상이어야 합니다.")
             return
         }
         
-        // 로컬에 사용자 데이터 저장
+        // 이메일 중복 확인
+        if userManager.isEmailRegistered(email) {
+            showAlert(message: "이미 가입된 이메일입니다.")
+            return
+        }
+        
         saveUserData(email: email, password: password)
     }
     
     private func isValidEmail(_ email: String) -> Bool {
-        // 이메일 유효성 검사 로직 (간단한 정규식 사용)
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         return NSPredicate(format:"SELF MATCHES %@", emailRegEx).evaluate(with: email)
     }
     
     private func isValidPassword(_ password: String) -> Bool {
-        // 비밀번호 유효성 검사
         return password.count >= 6
     }
     
@@ -146,15 +158,10 @@ class RegisterViewController: UIViewController {
     }
     
     private func saveUserData(email: String, password: String) {
-        // UserDefaults에 데이터 저장
-        let defaults = UserDefaults.standard
-        defaults.set(email, forKey: "userEmail")
-        defaults.set(password, forKey: "userPassword")
+        userManager.addUser(email: email, password: password)
         
-        // 저장 완료 알림
         showAlert(message: "회원가입에 성공했습니다.")
-        
-        // 이전 화면으로 돌아가기
+        userManager.printAllUsers()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.navigationController?.popViewController(animated: true)
         }

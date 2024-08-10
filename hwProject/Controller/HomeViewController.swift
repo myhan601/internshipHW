@@ -69,14 +69,14 @@ class HomeViewController: UIViewController {
     
     @objc func logoutButtonPressed(_ sender: Any) {
         // 로그아웃하고 LoginView로 돌아가기
-        if let navigationController = self.navigationController {
+        if let navigationController = navigationController {
             navigationController.popToRootViewController(animated: true)
         }
     }
     
     @objc func resignButtonPressed(_ sender: Any) {
         // 회원정보 삭제하고 LoginView로 돌아가기
-        if let navigationController = self.navigationController {
+        if let navigationController = navigationController {
             navigationController.popToRootViewController(animated: true)
         }
     }

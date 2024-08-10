@@ -17,6 +17,9 @@
 		AB21BFD52C6655F30033D08A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFD42C6655F30033D08A /* RegisterViewController.swift */; };
 		AB21BFD72C66F23C0033D08A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFD62C66F23C0033D08A /* Main.storyboard */; };
 		AB21BFDC2C66F2EA0033D08A /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB21BFDB2C66F2EA0033D08A /* Then */; };
+		AB21BFE92C67B7810033D08A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AB21BFE82C67B7810033D08A /* RealmSwift */; };
+		AB21BFEB2C67BBAD0033D08A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFEA2C67BBAD0033D08A /* User.swift */; };
+		AB21BFED2C67BC870033D08A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFEC2C67BC870033D08A /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,8 @@
 		AB21BFD22C6655D80033D08A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB21BFD42C6655F30033D08A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AB21BFD62C66F23C0033D08A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AB21BFEA2C67BBAD0033D08A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AB21BFEC2C67BC870033D08A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB21BFE92C67B7810033D08A /* RealmSwift in Frameworks */,
 				AB21BFCB2C664D5F0033D08A /* SnapKit in Frameworks */,
 				AB21BFDC2C66F2EA0033D08A /* Then in Frameworks */,
 			);
@@ -97,6 +103,8 @@
 		AB21BFDF2C670CF80033D08A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB21BFEA2C67BBAD0033D08A /* User.swift */,
+				AB21BFEC2C67BC870033D08A /* UserManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +128,7 @@
 			packageProductDependencies = (
 				AB21BFCA2C664D5F0033D08A /* SnapKit */,
 				AB21BFDB2C66F2EA0033D08A /* Then */,
+				AB21BFE82C67B7810033D08A /* RealmSwift */,
 			);
 			productName = hwProject;
 			productReference = AB21BFB22C66079F0033D08A /* hwProject.app */;
@@ -152,6 +161,7 @@
 			packageReferences = (
 				AB21BFC92C664D5F0033D08A /* XCRemoteSwiftPackageReference "SnapKit" */,
 				AB21BFDA2C66F2EA0033D08A /* XCRemoteSwiftPackageReference "Then" */,
+				AB21BFE72C67B7810033D08A /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = AB21BFB32C66079F0033D08A /* Products */;
 			projectDirPath = "";
@@ -184,7 +194,9 @@
 				AB21BFD52C6655F30033D08A /* RegisterViewController.swift in Sources */,
 				AB21BFBA2C66079F0033D08A /* HomeViewController.swift in Sources */,
 				AB21BFB62C66079F0033D08A /* AppDelegate.swift in Sources */,
+				AB21BFED2C67BC870033D08A /* UserManager.swift in Sources */,
 				AB21BFB82C66079F0033D08A /* SceneDelegate.swift in Sources */,
+				AB21BFEB2C67BBAD0033D08A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +427,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		AB21BFE72C67B7810033D08A /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -427,6 +447,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AB21BFDA2C66F2EA0033D08A /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		AB21BFE82C67B7810033D08A /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB21BFE72C67B7810033D08A /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
