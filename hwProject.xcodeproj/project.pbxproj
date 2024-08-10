@@ -10,14 +10,16 @@
 		AB21BFB62C66079F0033D08A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFB52C66079F0033D08A /* AppDelegate.swift */; };
 		AB21BFB82C66079F0033D08A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFB72C66079F0033D08A /* SceneDelegate.swift */; };
 		AB21BFBA2C66079F0033D08A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFB92C66079F0033D08A /* HomeViewController.swift */; };
-		AB21BFBD2C66079F0033D08A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFBC2C66079F0033D08A /* Base */; };
 		AB21BFBF2C6607A20033D08A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFBE2C6607A20033D08A /* Assets.xcassets */; };
 		AB21BFC22C6607A20033D08A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFC12C6607A20033D08A /* Base */; };
 		AB21BFCB2C664D5F0033D08A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB21BFCA2C664D5F0033D08A /* SnapKit */; };
-		AB21BFCF2C664F150033D08A /* RegisterView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFCE2C664F150033D08A /* RegisterView.storyboard */; };
-		AB21BFD12C6653250033D08A /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFD02C6653250033D08A /* HomeView.storyboard */; };
 		AB21BFD32C6655D80033D08A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFD22C6655D80033D08A /* LoginViewController.swift */; };
 		AB21BFD52C6655F30033D08A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFD42C6655F30033D08A /* RegisterViewController.swift */; };
+		AB21BFD72C66F23C0033D08A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB21BFD62C66F23C0033D08A /* Main.storyboard */; };
+		AB21BFD92C66F2B10033D08A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFD82C66F2B10033D08A /* RegisterView.swift */; };
+		AB21BFDC2C66F2EA0033D08A /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB21BFDB2C66F2EA0033D08A /* Then */; };
+		AB21BFDE2C670BF90033D08A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFDD2C670BF90033D08A /* LoginView.swift */; };
+		AB21BFE12C670D0C0033D08A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21BFE02C670D0C0033D08A /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,14 +27,15 @@
 		AB21BFB52C66079F0033D08A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB21BFB72C66079F0033D08A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AB21BFB92C66079F0033D08A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		AB21BFBC2C66079F0033D08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginView.storyboard; sourceTree = "<group>"; };
 		AB21BFBE2C6607A20033D08A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB21BFC12C6607A20033D08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB21BFC32C6607A20033D08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB21BFCE2C664F150033D08A /* RegisterView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterView.storyboard; sourceTree = "<group>"; };
-		AB21BFD02C6653250033D08A /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 		AB21BFD22C6655D80033D08A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB21BFD42C6655F30033D08A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		AB21BFD62C66F23C0033D08A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AB21BFD82C66F2B10033D08A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		AB21BFDD2C670BF90033D08A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AB21BFE02C670D0C0033D08A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB21BFCB2C664D5F0033D08A /* SnapKit in Frameworks */,
+				AB21BFDC2C66F2EA0033D08A /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,8 +72,10 @@
 			children = (
 				AB21BFB52C66079F0033D08A /* AppDelegate.swift */,
 				AB21BFB72C66079F0033D08A /* SceneDelegate.swift */,
-				AB21BFCC2C664EE10033D08A /* ViewController */,
+				AB21BFDF2C670CF80033D08A /* Model */,
+				AB21BFCC2C664EE10033D08A /* Controller */,
 				AB21BFCD2C664EEA0033D08A /* View */,
+				AB21BFD62C66F23C0033D08A /* Main.storyboard */,
 				AB21BFBE2C6607A20033D08A /* Assets.xcassets */,
 				AB21BFC02C6607A20033D08A /* LaunchScreen.storyboard */,
 				AB21BFC32C6607A20033D08A /* Info.plist */,
@@ -77,24 +83,31 @@
 			path = hwProject;
 			sourceTree = "<group>";
 		};
-		AB21BFCC2C664EE10033D08A /* ViewController */ = {
+		AB21BFCC2C664EE10033D08A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				AB21BFD22C6655D80033D08A /* LoginViewController.swift */,
 				AB21BFD42C6655F30033D08A /* RegisterViewController.swift */,
 				AB21BFB92C66079F0033D08A /* HomeViewController.swift */,
 			);
-			path = ViewController;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		AB21BFCD2C664EEA0033D08A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AB21BFBB2C66079F0033D08A /* LoginView.storyboard */,
-				AB21BFCE2C664F150033D08A /* RegisterView.storyboard */,
-				AB21BFD02C6653250033D08A /* HomeView.storyboard */,
+				AB21BFD82C66F2B10033D08A /* RegisterView.swift */,
+				AB21BFDD2C670BF90033D08A /* LoginView.swift */,
+				AB21BFE02C670D0C0033D08A /* HomeView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AB21BFDF2C670CF80033D08A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +128,7 @@
 			name = hwProject;
 			packageProductDependencies = (
 				AB21BFCA2C664D5F0033D08A /* SnapKit */,
+				AB21BFDB2C66F2EA0033D08A /* Then */,
 			);
 			productName = hwProject;
 			productReference = AB21BFB22C66079F0033D08A /* hwProject.app */;
@@ -146,6 +160,7 @@
 			mainGroup = AB21BFA92C66079F0033D08A;
 			packageReferences = (
 				AB21BFC92C664D5F0033D08A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				AB21BFDA2C66F2EA0033D08A /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = AB21BFB32C66079F0033D08A /* Products */;
 			projectDirPath = "";
@@ -161,11 +176,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB21BFD12C6653250033D08A /* HomeView.storyboard in Resources */,
 				AB21BFBF2C6607A20033D08A /* Assets.xcassets in Resources */,
 				AB21BFC22C6607A20033D08A /* Base in Resources */,
-				AB21BFCF2C664F150033D08A /* RegisterView.storyboard in Resources */,
-				AB21BFBD2C66079F0033D08A /* Base in Resources */,
+				AB21BFD72C66F23C0033D08A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +190,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB21BFD32C6655D80033D08A /* LoginViewController.swift in Sources */,
+				AB21BFDE2C670BF90033D08A /* LoginView.swift in Sources */,
 				AB21BFD52C6655F30033D08A /* RegisterViewController.swift in Sources */,
 				AB21BFBA2C66079F0033D08A /* HomeViewController.swift in Sources */,
+				AB21BFD92C66F2B10033D08A /* RegisterView.swift in Sources */,
+				AB21BFE12C670D0C0033D08A /* HomeView.swift in Sources */,
 				AB21BFB62C66079F0033D08A /* AppDelegate.swift in Sources */,
 				AB21BFB82C66079F0033D08A /* SceneDelegate.swift in Sources */,
 			);
@@ -187,14 +203,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AB21BFBB2C66079F0033D08A /* LoginView.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB21BFBC2C66079F0033D08A /* Base */,
-			);
-			name = LoginView.storyboard;
-			sourceTree = "<group>";
-		};
 		AB21BFC02C6607A20033D08A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -411,6 +419,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		AB21BFDA2C66F2EA0033D08A /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -418,6 +434,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AB21BFC92C664D5F0033D08A /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		AB21BFDB2C66F2EA0033D08A /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB21BFDA2C66F2EA0033D08A /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
