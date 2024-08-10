@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 class RegisterViewController: UIViewController {
-
+    
     // UI 요소들
     let titleLabel = UILabel().then {
         $0.text = "회원가입"
@@ -55,11 +55,10 @@ class RegisterViewController: UIViewController {
         setupConstraints()
         setupActions()
     }
-
+    
     private func setupUI() {
         view.backgroundColor = .white
         
-        // UI 요소들을 뷰에 추가
         view.addSubview(titleLabel)
         view.addSubview(emailLabel)
         view.addSubview(emailTextField)
@@ -69,7 +68,6 @@ class RegisterViewController: UIViewController {
     }
     
     private func setupConstraints() {
-        // UI 요소들의 제약 조건 설정
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(40)
             $0.centerX.equalToSuperview()
@@ -106,12 +104,11 @@ class RegisterViewController: UIViewController {
             $0.height.equalTo(50)
         }
     }
-
+    
     private func setupActions() {
-        // 버튼 액션 설정
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
-
+    
     @objc private func registerButtonTapped() {
         print("Register button tapped")
         
@@ -120,34 +117,34 @@ class RegisterViewController: UIViewController {
             showAlert(message: "유효한 이메일을 입력하세요.")
             return
         }
-
+        
         // 비밀번호 유효성 검사
         guard let password = passwordTextField.text, isValidPassword(password) else {
             showAlert(message: "비밀번호는 6자리 이상이어야 합니다.")
             return
         }
-
+        
         // 로컬에 사용자 데이터 저장
         saveUserData(email: email, password: password)
     }
-
+    
     private func isValidEmail(_ email: String) -> Bool {
         // 이메일 유효성 검사 로직 (간단한 정규식 사용)
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         return NSPredicate(format:"SELF MATCHES %@", emailRegEx).evaluate(with: email)
     }
-
+    
     private func isValidPassword(_ password: String) -> Bool {
-        // 비밀번호 유효성 검사 (예: 6자리 이상)
+        // 비밀번호 유효성 검사
         return password.count >= 6
     }
-
+    
     private func showAlert(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-
+    
     private func saveUserData(email: String, password: String) {
         // UserDefaults에 데이터 저장
         let defaults = UserDefaults.standard
@@ -156,7 +153,7 @@ class RegisterViewController: UIViewController {
         
         // 저장 완료 알림
         showAlert(message: "회원가입에 성공했습니다.")
-
+        
         // 이전 화면으로 돌아가기
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.navigationController?.popViewController(animated: true)

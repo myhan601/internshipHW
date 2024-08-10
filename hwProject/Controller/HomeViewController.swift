@@ -10,8 +10,7 @@ import SnapKit
 import Then
 
 class HomeViewController: UIViewController {
-
-    // UI Elements
+    
     let welcomeLabel = UILabel().then {
         $0.text = "환영합니다"
         $0.font = UIFont.systemFont(ofSize: 24)
@@ -26,26 +25,33 @@ class HomeViewController: UIViewController {
         $0.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
     }
     
+    let resignButton = UIButton().then {
+        $0.setTitle("탈퇴하기", for: .normal)
+        $0.setTitleColor(.red, for: .normal)
+        $0.addTarget(self, action: #selector(resignButtonPressed), for: .touchUpInside)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupConstraints()
         
         logoutButton.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
+        logoutButton.addTarget(self, action: #selector(resignButtonPressed), for: .touchUpInside)
     }
     
-    // UI Setup
     private func setupUI() {
         view.backgroundColor = .white
         
         view.addSubview(welcomeLabel)
         view.addSubview(logoutButton)
+        view.addSubview(resignButton)
     }
     
     private func setupConstraints() {
         welcomeLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview().offset(-20)
+            $0.centerY.equalToSuperview().offset(-40)
         }
         
         logoutButton.snp.makeConstraints {
@@ -54,14 +60,24 @@ class HomeViewController: UIViewController {
             $0.width.equalTo(200)
             $0.height.equalTo(50)
         }
+        
+        resignButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(logoutButton.snp.bottom).offset(20)
+        }
     }
     
-    // Button Actions
     @objc func logoutButtonPressed(_ sender: Any) {
         // 로그아웃하고 LoginView로 돌아가기
-        let loginViewController = LoginViewController()
-        
-        loginViewController.modalPresentationStyle = .fullScreen
-        self.present(loginViewController, animated: true, completion: nil)
+        if let navigationController = self.navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
+    }
+    
+    @objc func resignButtonPressed(_ sender: Any) {
+        // 회원정보 삭제하고 LoginView로 돌아가기
+        if let navigationController = self.navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
     }
 }

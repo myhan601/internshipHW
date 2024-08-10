@@ -11,7 +11,6 @@ import Then
 
 class LoginViewController: UIViewController {
 
-    // UI Elements
     let emailTextField = UITextField().then {
         $0.placeholder = "email@example.com"
         $0.borderStyle = .roundedRect
@@ -26,7 +25,7 @@ class LoginViewController: UIViewController {
     }
 
     let loginButton = UIButton().then {
-        $0.setTitle("Login", for: .normal)
+        $0.setTitle("로그인", for: .normal)
         $0.backgroundColor = UIColor.lightGray
         $0.setTitleColor(.black, for: .normal)
         $0.layer.cornerRadius = 5
@@ -34,9 +33,9 @@ class LoginViewController: UIViewController {
     }
 
     let registerButton = UIButton().then {
-        $0.setTitle("Register", for: .normal)
-        $0.setTitleColor(.black, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        $0.setTitle("회원가입", for: .normal)
+        $0.setTitleColor(.blue, for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         $0.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
 
@@ -45,7 +44,7 @@ class LoginViewController: UIViewController {
         setupUI()
         setupConstraints()
     }
-
+    
     private func setupUI() {
         view.backgroundColor = .white
 
@@ -83,7 +82,6 @@ class LoginViewController: UIViewController {
     }
 
     @objc func loginButtonPressed(_ sender: Any) {
-        // Handle login action
         let homeViewController = HomeViewController()
         homeViewController.navigationItem.hidesBackButton = true
         
@@ -92,8 +90,8 @@ class LoginViewController: UIViewController {
     }
 
     @objc func registerButtonTapped(_ sender: Any) {
-        // Navigate to RegisterViewController
         let registerViewController = RegisterViewController()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.pushViewController(registerViewController, animated: true)
     }
 }
